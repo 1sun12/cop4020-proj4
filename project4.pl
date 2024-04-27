@@ -39,3 +39,36 @@ clear(Block, S1, S2) :-
     move(Block, surface, Temp, S2).
 
 
+% Test Start Situation
+% ?- start(S).
+
+% Test Move Predicate
+% ?- start(S), move(b2, surface, S, NewSituation).
+
+% Test Block and Location Predicates
+% ?- start(S), block(Block, S).
+% ?- start(S), block(b3, S).
+% ?- start(S), block(surface, S).
+% ?- start(S), location(Location, S).
+
+% % Test Move2 Predicate
+% ?- start(S), move2(b2, surface, S, NewSituation).
+% ?- start(S), move2(surface, b1, S, _).
+% ?- start(S), move2(b1, table, S, _).
+
+% % Test Clear_Top Predicate
+% ?- start(S), clear_top(surface, S).
+% ?- start(S), clear_top(b1, S).
+% ?- start(S), clear_top(b2, S).
+
+% % Test Move3 Predicate
+% ?- start(S), move3(b2, surface, S, _).
+% ?- start(S), move3(surface, b1, S, _).
+
+% % Test Clear Predicate
+% ?- start(S), clear(b2, S, _).
+% ?- start(S), clear(b1, S, _).
+
+% % Test Recursive Clear
+% start2([on(b1, surface), on(b2, b1), on(b3, b2)]).
+% ?- start2(S), clear(b1, S, _).
