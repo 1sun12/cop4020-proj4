@@ -14,3 +14,9 @@ block(Block, Situation) :-
 
 location(Location, Situation) :-
     (member(on(Location, _), Situation); Location = surface).
+
+move2(Block, Destination, S1, S2) :-
+    block(Block, S1),
+    location(Destination, S1),
+    move(Block, Destination, S1, S2).
+
