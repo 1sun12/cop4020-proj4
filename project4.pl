@@ -8,3 +8,9 @@ move(Block, Destination, S1, S2) :-
     select(on(Block, _), S1, Rest),
     append([on(Block, Destination)], Rest, S2),
     write('Moving block '), write(Block), write(' to '), write(Destination).
+
+block(Block, Situation) :-
+    member(on(Block, _), Situation).
+
+location(Location, Situation) :-
+    (member(on(Location, _), Situation); Location = surface).
