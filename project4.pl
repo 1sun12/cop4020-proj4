@@ -29,4 +29,13 @@ move3(Block, Destination, S1, S2) :-
     clear_top(Destination, S1),
     move2(Block, Destination, S1, S2).
 
+clear(Block, S1, S2) :-
+    clear_top(Block, S1),
+    S2 = S1.
+
+clear(Block, S1, S2) :-
+    select(on(Block, OnTop), S1, Rest),
+    clear(OnTop, Rest, Temp),
+    move(Block, surface, Temp, S2).
+
 
