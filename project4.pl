@@ -20,3 +20,7 @@ move2(Block, Destination, S1, S2) :-
     location(Destination, S1),
     move(Block, Destination, S1, S2).
 
+clear_top(surface, _).
+clear_top(Block, Situation) :-
+    \+ (member(on(_, Block), Situation)).
+
