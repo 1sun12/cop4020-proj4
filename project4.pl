@@ -24,3 +24,9 @@ clear_top(surface, _).
 clear_top(Block, Situation) :-
     \+ (member(on(_, Block), Situation)).
 
+move3(Block, Destination, S1, S2) :-
+    clear_top(Block, S1),
+    clear_top(Destination, S1),
+    move2(Block, Destination, S1, S2).
+
+
